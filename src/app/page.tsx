@@ -1,5 +1,4 @@
 import Image from "next/image";
-import backgroundFrist from "../../public/background-frond.svg";
 
 export default function Home() {
   const team = [
@@ -62,7 +61,13 @@ export default function Home() {
         }}
       >
         <div className="flex flex-col justify-center items-center p-2 gap-2">
-          <img src="/FrondOnlineLogo.png" alt="" className="size-5/5" />
+          <Image
+            src="/FrondOnlineLogo.png"
+            className="size-5/5"
+            width={600}
+            height={600}
+            alt=""
+          />
 
           <h1 className="font-bold md:text-4xl text-3xl">
             RECEBA NOSSAS NEWSLETTERS!
@@ -99,13 +104,15 @@ export default function Home() {
           return (
             <div
               key={member.name}
-              className=" size-3/6 p-4 flex flex-col flex-1 justify-center items-center gap-10"
+              className=" md:size-3/6 size-5/6 p-4 flex flex-col flex-1 justify-center items-center gap-10"
             >
               <div className="min-w-full flex md:flex-row flex-col justify-around items-center">
                 {index % 2 === 0 ? (
                   <>
-                    <img
+                    <Image
                       src={member.image}
+                      width={100}
+                      height={100}
                       alt=""
                       className="md:size-1/6 size-2/5"
                     />
@@ -118,8 +125,10 @@ export default function Home() {
                     <span className="flex-1 text-2xl text-center rounded-xl border-4 border-y-orange-400 border-x-orange-300 bg-green-900 text-white">
                       {member.name}
                     </span>
-                    <img
+                    <Image
                       src={member.image}
+                      width={100}
+                      height={100}
                       alt=""
                       className="md:size-1/6 size-2/5"
                     />
@@ -134,13 +143,17 @@ export default function Home() {
       <div className="flex flex-col p-4 min-w-full  gap-3 justify-end items-center bg-black ">
         <h1 className="text-white pt-10">Apoio</h1>
         <div className=" min-w-full p-10  flex flex-row justify-center items-center gap-12 border-b border-gray-900">
-          <img
+          <Image
             src="/EpicGamesLogo.png"
+            width={100}
+            height={100}
             alt=""
             className="md:size-1/12 size-4/12"
           />
-          <img
+          <Image
             src="/UnrealEngineLogo.png"
+            width={100}
+            height={100}
             alt=""
             className="md:size-1/12 size-4/12"
           />
@@ -149,8 +162,10 @@ export default function Home() {
       <footer className="flex flex-col gap-3 p-5 items-start justify-start bg-black">
         <div className="border-b border-gray-900 p-4 min-w-screen flex md:flex-row flex-col md:gap-1 gap-8 md:justify-start justify-center md:items-start items-center">
           <div className="flex justify-start">
-            <img
+            <Image
               src="/RebelosPlanetGeekLogo.png"
+              width={100}
+              height={100}
               alt=""
               className="md:size-4/5 size-6/6"
             />
