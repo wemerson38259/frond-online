@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import localFont from "next/font/local";
 
-export const DraconisFont = localFont({
+const DraconisFont = localFont({
   src: "./static-fonts/Draconis Bold.otf",
 });
 
