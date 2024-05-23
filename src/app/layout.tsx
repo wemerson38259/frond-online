@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+
 import { Inter } from "next/font/google";
 import "./globals.css";
 import localFont from "next/font/local";
+import { Header } from "@/components/Header";
 
 const DraconisFont = localFont({
   src: "./static-fonts/Draconis Bold.otf",
@@ -21,7 +23,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={DraconisFont.className}>{children}</body>
+      <body className={DraconisFont.className}>
+        <Header></Header>
+        <main>{children}</main>
+      </body>
     </html>
   );
 }

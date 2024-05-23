@@ -1,56 +1,9 @@
 "use client";
 import * as React from "react";
-import { cn } from "@/lib/utils";
 
 import Image from "next/image";
 import { Input } from "@/components/ui/input";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
-import Link from "next/link";
-const components: { title: string; href: string; description: string }[] = [
-  {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
-    description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
-  },
-  {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
-    description:
-      "For sighted users to preview content available behind a link.",
-  },
-  {
-    title: "Progress",
-    href: "/docs/primitives/progress",
-    description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
-  },
-  {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
-  },
-  {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
-    description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
-  },
-  {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
-    description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
-  },
-];
+
 export default function Home() {
   const team = [
     {
@@ -101,91 +54,12 @@ export default function Home() {
 
   return (
     <>
-      {/* <header className="bg-black"> */}
-      <NavigationMenu>
-        <NavigationMenuList>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>Guia</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                <li className="row-span-3">
-                  <NavigationMenuLink asChild>
-                    <a
-                      className="flex h-full w-full select-none flex-col bg-white border-4 border-y-orange-400 border-x-orange-300  justify-end rounded-md from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                      href="/wiki"
-                    >
-                      <Image
-                        src="/FrondOnlineLogo.png"
-                        width={75}
-                        height={100}
-                        alt="logo"
-                      />
-                      <div className="mb-2 mt-4 text-lg text-black font-bold">
-                        Classes
-                      </div>
-                      <p className="text-sm leading-tight text-muted-foreground text-justify">
-                        Tabela de relacionamento de clases. Entenda como
-                        progredir para liberar a classe que deseja, alem de
-                        obter informaç~~oes valiosas sobre todas as classes e
-                        descobrir qual se encaixa em seu perfil
-                      </p>
-                    </a>
-                  </NavigationMenuLink>
-                </li>
-                <ListItem href="/docs" title="Introduction">
-                  Re-usable components built using Radix UI and Tailwind CSS.
-                </ListItem>
-                <ListItem href="/docs/installation" title="Installation">
-                  How to install dependencies and structure your app.
-                </ListItem>
-                <ListItem href="/docs/primitives/typography" title="Typography">
-                  Styles for headings, paragraphs, lists...etc
-                </ListItem>
-              </ul>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>Comunidades</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                {components.map((component) => (
-                  <ListItem
-                    key={component.title}
-                    title={component.title}
-                    href={component.href}
-                  >
-                    {component.description}
-                  </ListItem>
-                ))}
-              </ul>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Link href="/docs" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Novidades
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Link href="/docs" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                FAQ
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
-      {/* </header> */}
       <main className="flex min-h-screen flex-col items-center justify-between">
         {/* <div className="min-h-screen"> */}
         <div
-          className="min-h-screen min-w-full flex flex-col justify-center items-center"
+          className="bg-fixed min-h-screen min-w-full flex flex-col justify-center items-center"
           style={{
             backgroundImage: `url(/background-frond.png)`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
           }}
         >
           <div className="flex flex-col justify-center items-center p-2 gap-2">
@@ -218,17 +92,21 @@ export default function Home() {
           </div>
         </div>
         <div
-          className="flex-col min-h-screen min-w-full flex justify-center items-center"
+          className="shadow-lg shadow-blue-500/50 bg-gradient-to-r from-cyan-500 to-blue-500 bg-fixed flex-col min-h-screen min-w-full flex justify-center items-center"
           style={{
             backgroundImage: "url(/floresta-frond.png)",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
           }}
         >
+          {/* <div
+            className="m-[-20px] bg-scroll min-w-full min-h-20"
+            style={{
+              backgroundImage: "url(/galhos.png)",
+            }}
+          ></div> */}
           <h1 className="p-16 font-bold text-white text-4xl">
             Conheça a Equipe de Desenvolvimento
           </h1>
+
           {team.map((member, index) => {
             return (
               <div
@@ -248,13 +126,13 @@ export default function Home() {
                         }}
                         className="md:size-1/6 size-2/5 rounder-xl border-4 border-y-orange-400 border-x-orange-300"
                       />
-                      <span className="flex justify-center flex-1 border-l-0 rounded-r-xl text-2xl text-center border-4 border-y-orange-400 border-x-orange-300 bg-green-900 text-white">
+                      <span className="flex justify-center flex-1 md:border-l-0 md:rounded-r-xl rounded-xl text-2xl text-center border-4 border-y-orange-400 border-x-orange-300 bg-[#0c4f4e] text-white">
                         {member.name}
                       </span>
                     </>
                   ) : (
                     <>
-                      <span className="flex justify-center flex-1 min-h-full text-2xl text-center rounded-l-xl border-r-0 border-4 border-y-orange-400 border-x-orange-300 bg-green-900 text-white">
+                      <span className="flex justify-center flex-1 min-h-full text-2xl text-center md:rounded-l-xl rounded-xl md:border-r-0 border-4 border-y-orange-400 border-x-orange-300 bg-[#0c4f4e] text-white">
                         {member.name}
                       </span>
                       <Image
@@ -276,7 +154,7 @@ export default function Home() {
         </div>
         {/* </div> */}
         <div className="flex flex-col p-4 min-w-full  gap-3 justify-end items-center bg-black ">
-          <h1 className="text-white pt-10">Apoio</h1>
+          <h1 className="text-white text-2xl pt-10">Apoio</h1>
           <div className=" min-w-full p-10  flex flex-row justify-center items-center gap-12 border-b border-gray-900">
             <Image
               src="/EpicGamesLogo.png"
@@ -375,29 +253,3 @@ export default function Home() {
     </>
   );
 }
-
-const ListItem = React.forwardRef<
-  React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
-  return (
-    <li>
-      <NavigationMenuLink asChild>
-        <a
-          ref={ref}
-          className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className
-          )}
-          {...props}
-        >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-            {children}
-          </p>
-        </a>
-      </NavigationMenuLink>
-    </li>
-  );
-});
-ListItem.displayName = "ListItem";
