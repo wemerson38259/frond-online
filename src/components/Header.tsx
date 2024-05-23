@@ -46,7 +46,7 @@ export default function Header() {
               height={100}
               alt=""
             />
-            <h1>FROND ONLINE</h1>
+            {/* <h1>FROND ONLINE</h1> */}
           </a>
           <NavigationMenuItem>
             <NavigationMenuTrigger>Guia</NavigationMenuTrigger>
@@ -67,14 +67,14 @@ export default function Header() {
                     </a>
                   </NavigationMenuLink>
                 </li>
-                <ListItem href="/docs" title="">
-                  Re-usable components built using Radix UI and Tailwind CSS.
+                <ListItem href="/docs" title="Populaçao">
+                  Sobre os povos.
                 </ListItem>
-                <ListItem href="/docs/installation" title="Installation">
-                  How to install dependencies and structure your app.
+                <ListItem href="/docs/installation" title="Economia">
+                  Sobre valores e produtos.
                 </ListItem>
-                <ListItem href="/docs/primitives/typography" title="Typography">
-                  Styles for headings, paragraphs, lists...etc
+                <ListItem href="/docs/primitives/typography" title="Politica">
+                  Luli vs Bozo
                 </ListItem>
               </ul>
               <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
@@ -93,14 +93,17 @@ export default function Header() {
                     </a>
                   </NavigationMenuLink>
                 </li>
-                <ListItem href="/docs" title="Introduction">
-                  Re-usable components built using Radix UI and Tailwind CSS.
+                <ListItem href="/docs" title="Bases">
+                  Conheça todas as mecanicas
                 </ListItem>
-                <ListItem href="/docs/installation" title="Installation">
-                  How to install dependencies and structure your app.
+                <ListItem href="/docs/installation" title="Avançadas">
+                  Conheça todas as mecanicas
                 </ListItem>
-                <ListItem href="/docs/primitives/typography" title="Typography">
-                  Styles for headings, paragraphs, lists...etc
+                <ListItem
+                  href="/docs/primitives/typography"
+                  title="Especialistas"
+                >
+                  Conheça todas as mecanicas
                 </ListItem>
               </ul>
             </NavigationMenuContent>
@@ -151,13 +154,15 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-[#414141] hover:text-accent-foreground focus:bg-[#414141] focus:text-accent-foreground",
             className
           )}
           {...props}
         >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+          <div className="text-sm font-medium text-[#fb923c] leading-none">
+            {title}
+          </div>
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground text-[#fdba74]">
             {children}
           </p>
         </a>
