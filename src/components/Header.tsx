@@ -52,28 +52,36 @@ export default function Header() {
             <NavigationMenuTrigger>Guia</NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                <li className="row-span-3">
-                  <NavigationMenuLink asChild>
+                <li className="row-span-3 text-center">
+                  <NavigationMenuLink
+                    asChild
+                    style={{
+                      backgroundImage: `url(/FRONDMAP/2/1/1.png)`,
+                    }}
+                  >
                     <a
                       className="flex h-full w-full select-none flex-col bg-white border-4 border-y-orange-400 border-x-orange-300  justify-end rounded-md from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                       href="/worldmap"
                     >
-                      <div className="mb-2 mt-4 text-lg text-black font-bold text-center">
-                        World Map
+                      <div className="mb-2 mt-4 text-2xl text-black font-bold text-center">
+                        Mundo
                       </div>
-                      <p className="text-sm leading-tight text-muted-foreground text-center">
+                      {/* <p className="text-sm leading-tight text-black text-center">
                         Conheça o mundo de Frond Online!
-                      </p>
+                      </p> */}
                     </a>
                   </NavigationMenuLink>
                 </li>
-                <ListItem href="/docs" title="Populaçao">
+                <ListItem href="/docs" title="Cronologia">
                   Sobre os povos.
                 </ListItem>
-                <ListItem href="/docs/installation" title="Economia">
+                <ListItem href="/docs/installation" title="Cosmologia">
                   Sobre valores e produtos.
                 </ListItem>
-                <ListItem href="/docs/primitives/typography" title="Politica">
+                <ListItem
+                  href="/docs/primitives/typography"
+                  title="Civilizações"
+                >
                   Luli vs Bozo
                 </ListItem>
               </ul>
@@ -85,25 +93,80 @@ export default function Header() {
                       href="/classesguid"
                     >
                       <div className="mb-2 mt-4 text-lg text-black font-bold text-center">
-                        Classes
+                        Personagens
                       </div>
-                      <p className="text-sm leading-tight text-muted-foreground text-center">
+                      {/* <p className="text-sm leading-tight text-muted-foreground text-center">
                         Conheça todas as raças do mundo de Frond Online!
-                      </p>
+                      </p> */}
                     </a>
                   </NavigationMenuLink>
                 </li>
-                <ListItem href="/docs" title="Bases">
+                <ListItem href="/docs" title="Raças">
                   Conheça todas as mecanicas
                 </ListItem>
-                <ListItem href="/docs/installation" title="Avançadas">
+                <ListItem href="/docs/installation" title="Arquetipos">
+                  Conheça todas as mecanicas
+                </ListItem>
+                <ListItem href="/docs/primitives/typography" title="Classes">
+                  Conheça todas as mecanicas
+                </ListItem>
+              </ul>
+              <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                <li className="row-span-3">
+                  <NavigationMenuLink asChild>
+                    <a
+                      className="flex h-full w-full select-none flex-col bg-white border-4 border-y-orange-400 border-x-orange-300  justify-end rounded-md from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                      href="/classesguid"
+                    >
+                      <div className="mb-2 mt-4 text-lg text-black font-bold text-center">
+                        Recursos
+                      </div>
+                      {/* <p className="text-sm leading-tight text-muted-foreground text-center">
+                        Conheça todas as raças do mundo de Frond Online!
+                      </p> */}
+                    </a>
+                  </NavigationMenuLink>
+                </li>
+                <ListItem href="/docs" title="Atributos & Habilidades">
+                  Conheça todas as mecanicas
+                </ListItem>
+                <ListItem href="/docs/installation" title="Talentos & Magias">
                   Conheça todas as mecanicas
                 </ListItem>
                 <ListItem
                   href="/docs/primitives/typography"
-                  title="Especialistas"
+                  title="Equipamentos & Ferramentas"
                 >
                   Conheça todas as mecanicas
+                </ListItem>
+              </ul>
+              <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                <li className="row-span-3">
+                  <NavigationMenuLink asChild>
+                    <a
+                      className="flex h-full w-full select-none flex-col bg-white border-4 border-y-orange-400 border-x-orange-300  justify-end rounded-md from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                      href="/classesguid"
+                    >
+                      <div className="mb-2 mt-4 text-lg text-black font-bold text-center">
+                        Jogabilidade
+                      </div>
+                      {/* <p className="text-sm leading-tight text-muted-foreground text-center">
+                        Conheça todas as raças do mundo de Frond Online!
+                      </p> */}
+                    </a>
+                  </NavigationMenuLink>
+                </li>
+                <ListItem href="/docs" title="Definições">
+                  Conheça todas as mecânicas
+                </ListItem>
+                <ListItem href="/docs/installation" title="Mecânica">
+                  Conheça todas as mecânicas
+                </ListItem>
+                <ListItem
+                  href="/docs/primitives/typography"
+                  title="Progressões"
+                >
+                  Conheça todas as mecânicas
                 </ListItem>
               </ul>
             </NavigationMenuContent>
@@ -162,7 +225,7 @@ const ListItem = React.forwardRef<
           <div className="text-sm font-medium text-[#fb923c] leading-none">
             {title}
           </div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground text-[#fdba74]">
+          <p className="line-clamp-2 text-sm leading-snug  text-[#fdba74]">
             {children}
           </p>
         </a>

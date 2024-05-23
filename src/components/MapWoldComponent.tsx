@@ -32,6 +32,7 @@ export default function MapWoldComponent() {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="./FRONDMAP/{z}/{x}/{y}.png"
           minZoom={2}
+          maxZoom={4}
           detectRetina={true}
 
           // zoomReverse={true}
