@@ -33,7 +33,7 @@ const components: { title: string; href: string; description: string }[] = [
     description: "Conheça um pouco mais sobre a Rebelos Game Studio.",
   },
 ];
-export function Header() {
+export default function Header() {
   return (
     <header>
       <NavigationMenu>
